@@ -1,6 +1,6 @@
 package com.pateluday07.amazon.mq.consumer.config;
 
-import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
+import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ public class ActiveMQConfig {
     @Bean
     public ActiveMQConnectionFactory connectionFactory() {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(brokerUrl);
-        connectionFactory.setUser(user);
+        connectionFactory.setUserName(user);
         connectionFactory.setPassword(password);
         return connectionFactory;
     }
