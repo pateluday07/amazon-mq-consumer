@@ -12,7 +12,7 @@ public class Consumer {
     @Value("${artemis.queue.demo}")
     private String queueName;
 
-    @JmsListener(destination = "DemoQueue")
+    @JmsListener(destination = "${artemis.queue.demo}")
     public void consumeMessage(String message) {
         log.info("{} received from {}", message, queueName);
     }
