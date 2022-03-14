@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Log4j2
 public class Consumer {
 
-    @Value("${artemis.queue.demo}")
+    @Value("${activemq.queue.demo}")
     private String queueName;
 
-    @JmsListener(destination = "${artemis.queue.demo}")
+    @JmsListener(destination = "${activemq.queue.demo}")
     public void consumeMessage(String message) {
         log.info("{} received from {}", message, queueName);
     }
